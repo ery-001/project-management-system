@@ -3,11 +3,18 @@ from django.conf import settings
 from django.core.mail import send_mail
 
 class Project(models.Model):
+    STATUS_CHOICES = [
+        ("pending", "Pending"),
+        ("in_progress", "In Progress"),
+        ("completed", "Completed"),
+    ]
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     assigned_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='projects')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")  # ✅ Added Status Field
+
 
     def __str__(self):
         return self.name
