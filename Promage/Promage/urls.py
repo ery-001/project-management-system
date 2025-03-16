@@ -20,6 +20,7 @@ import authentication.urls
 import  dashboard.urls
 
 urlpatterns = [
+    path('api/', include('taskmanager.urls')),
     path("api/auth/", include(authentication.urls)),
     path("api/dashboard/", include(dashboard.urls)),
     path("api/projects/", include("projects.urls")),
