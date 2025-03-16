@@ -9,3 +9,5 @@ router.register(r'tasks', TaskViewSet)
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+# update_status action allows users to update task status via PATCH /api/tasks/{id}/update_status/.
