@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "project_templates",
     "settings",
     "corsheaders",
+    "taskmanager",
 ]
 
 MIDDLEWARE = [
