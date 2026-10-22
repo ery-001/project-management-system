@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     "resource_mgmt",
     "users",
     "project_templates",
-    "settings",
+    "app_settings",
     "corsheaders",
     "taskmanager",
     'channels',
@@ -87,6 +87,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Promage.urls'
+ASGI_APPLICATION = 'Promage.asgi.application'
 
 TEMPLATES = [
     {
